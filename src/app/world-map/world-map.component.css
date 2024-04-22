@@ -1,0 +1,48 @@
+.att {
+    text-decoration: none;
+    color: lightblue;
+}
+
+.col1  {
+    width: 85%;
+    border: 1px solid black;
+}
+
+.col2 {
+    width: 15%;
+    border: 1px solid black;
+}
+
+.colwrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.foot {
+    width: auto;
+    display: block;
+    background: #000;
+    color: white;
+    font-size: 20px;
+    padding: 0px 10px;
+    margin: 0px;
+    position: relative;
+    top: 275px;
+}
+
+.head {
+    font-size: 48px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.rowwrap {
+    display: flex;
+    display: row-wrap;
+}
+
+#worldmap {
+    width: 100%;
+    height: 800px;
+}
