@@ -1,38 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Country } from './country';
+import { ApiintegrationService } from './apiintegration.service';
+
 
 @Component({
   selector: 'app-world-map',
   standalone: true,
-  imports: [
-    HttpClient, 
-    HttpClientModule,
-  ],
+  imports: [],
   templateUrl: './world-map.component.html',
   styleUrl: './world-map.component.css'
 })
-export class WorldMapComponent implements OnInit {
+export class WorldMapComponent {
+  info: any = {};
 
-  public rJson: any;
-  public pJson: any;
-  
+  constructor(private apiService: ApiintegrationService) {}
 
-  constructor(private http: HttpClient) {
-
-  };
-
-  ngOnInit(): void {
-
+  fetchInfo(event: any) {
+    this.apiService.countryData(event.target.id).subscribe((data: any) => {
+      this.info = {
+        ...data,
+      }
+    }) 
   }
-
-  fetchInfo() {
-    let rJson = JSON.stringify(this.http.get("https://api.worldbank.org/v2/country/af?format=json"));
-    let pJson = JSON.parse(rJson);
-    let countryName = pJson.name;
-    let capital = pJson.capitalCity;
-    let region= pJson.region.value;
-    let income = pJson.incomeLevel.value;
-  }
-
 }
