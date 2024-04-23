@@ -1,6 +1,8 @@
-# SmileyD280Project
+# World Map with Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
+
+The purpose of the project is to create a basic web application displaying an interactable SVG map of the world. Clicking on countries utilizes the WorldBank RESTful API using Angular's built-in http.get() functionality. The project utilizes HTML, CSS, and TypeScript built wholly within the framework of Angular.
 
 ## Development server
 
